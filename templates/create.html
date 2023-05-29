@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<p></p>
+<h4><b>
+    <span style="color:#0088ff">{% block title %} Pré-matrícula - Reserva de vaga {% endblock %}</span>
+</b></h4>
+
+<form method="post">
+    <div class="form-row">
+        <div class="col">
+            <label for="name"><b>Nome do aluno: </b></label>
+            <input type="text" name="name" placeholder="adicione o nome do aluno" class="form-control" value="{{ request.form['name'] }}">
+        </div>
+        <div class="col">
+            <label for="born"><b>Data de nascimento do aluno: </b></label>
+            <input type="text" name="born" placeholder="dd/mm/aaaa" class="form-control" value="{{ request.form['born'] }}">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col">
+            <label for="grad"><b>Série do aluno: </b></label>
+        <input type="text" name="grad" placeholder="série do aluno" class="form-control" value="{{ request.form['grad'] }}">
+        </div>
+        <div class="col">
+            <label for="sch"><b>Escola de sua preferência: </b></label>
+        <input type="text" name="sch" placeholder="escola de preferência" class="form-control" value="{{ request.form['sch'] }}">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-6">
+            <label for="addr"><b>Endereço do aluno: </b></label>
+            <input type="text" name="addr" placeholder="Rua / Avenida / Número / Bairro / CEP" class="form-control" value="{{ request.form['addr'] }}">
+        </div>
+        <div class="col-md-4">
+            <label for="city"><b>Cidade: </b></label>
+            <input type="text" name="city" placeholder="adicione a cidade" class="form-control" value="{{ request.form['city'] }}">
+        </div>
+        <div class="col-md-2">
+            <label for="uf"><b>Estado: </b></label>
+            <input type="text" name="uf" placeholder="adicione o Estado" class="form-control" value="{{ request.form['uf'] }}">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col">
+            <label for="resp"><b>Mãe ou responsável: </b></label>
+            <input type="text" name="resp" placeholder="nome da mãe ou responsável" class="form-control" value="{{ request.form['resp'] }}">
+        </div>
+        <div class="col">
+            <label for="email"><b>E-mail para contato: </b></label>
+            <input type="text" name="email" placeholder="email@servidor.com.br" class="form-control" value="{{ request.form['email'] }}">
+        </div>
+        <div class="col">
+            <label for="tel"><b>Telefone para contato: </b></label>
+            <input type="text" name="tel" placeholder="(XX) XXXXX-XXXX" class="form-control" value="{{ request.form['tel'] }}">
+        </div>
+    </div>
+    <div class="form-row">
+    <div class="col">
+        <p></p>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <p></p>
+    </div>
+    </div>
+</form>
+
+{% endblock %}

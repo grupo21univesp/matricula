@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<p></p>
+<h4 align="left"><b>{% block title %} Lista de pré-matrículas solicitadas: {% endblock %}</b></h4>
+
+	{% for post in exibir %}
+		<a href="{{ url_for('post', post_id=post['id']) }}">
+			<h4>{{ post['name'] }}</h4>
+		</a>
+	<span class="badge badge-primary">{{ post['created'] }}</span>
+	<a href="{{ url_for('edit', id=post['id']) }}">
+		<span class="badge badge-warning">Editar</span>
+	</a>
+	<hr>
+	{% endfor %}
+{% endblock %}

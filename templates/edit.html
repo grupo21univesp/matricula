@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<p></p>
+<h4><b><span style="color:#0088ff">{% block title %} Editar dados do aluno: {% endblock %}</span></b></h4>
+
+<form method="post">
+    <div class="form-row">
+        <div class="col">
+            <label for="name"><b>Nome: </b></label>
+            <input type="text" name="name" placeholder="Adicione nome do aluno"
+                   class="form-control"
+                   value="{{ request.form['name'] or post['name'] }}">
+        </div>
+        <div class="col">
+            <label for="born"><b>Data de nascimento: </b></label>
+            <input type="text" name="born" placeholder="dd/mm/aaaa"
+                   class="form-control"
+                   value="{{ request.form['born'] or post['born'] }}">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col">
+            <label for="grad"><b>Série: </b></label>
+            <input type="text" name="grad" placeholder="série do aluno"
+                   class="form-control"
+                   value="{{ request.form['grad'] or post['grad'] }}">
+        </div>
+        <div class="col">
+            <label for="sch"><b>Escola de sua preferência: </b></label>
+        <input type="text" name="sch" placeholder="escola de preferência"
+               class="form-control"
+               value="{{ request.form['sch'] or post['sch'] }}">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-6">
+            <label for="addr"><b>Endereço: </b></label>
+            <input type="text" name="addr" placeholder="Rua / Avenida / Número / Bairro / CEP"
+                   class="form-control"
+                   value="{{ request.form['addr'] or post['addr'] }}">
+        </div>
+        <div class="col-md-4">
+            <label for="city"><b>Cidade: </b></label>
+            <input type="text" name="city" placeholder="adicione a cidade"
+                   class="form-control"
+                   value="{{ request.form['city'] or post['city'] }}">
+        </div>
+        <div class="col-md-2">
+            <label for="uf"><b>Estado: </b></label>
+            <input type="text" name="uf" placeholder="adicione o Estado"
+                   class="form-control"
+                   value="{{ request.form['uf'] or post['uf'] }}">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col">
+            <label for="resp"><b>Mãe ou responsável: </b></label>
+            <input type="text" name="resp" placeholder="nome da mãe ou responsável"
+                   class="form-control"
+                   value="{{ request.form['resp'] or post['resp'] }}">
+        </div>
+        <div class="col">
+            <label for="email"><b>E-mail para contato: </b></label>
+            <input type="text" name="email" placeholder="email@servidor.com.br"
+                   class="form-control"
+                   value="{{ request.form['email'] or post['email'] }}">
+        </div>
+        <div class="col">
+            <label for="tel"><b>Telefone para contato: </b></label>
+            <input type="text" name="tel" placeholder="(XX) XXXXX-XXXX"
+                   class="form-control"
+                   value="{{ request.form['tel'] or post['tel'] }}">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col">
+            <p></p>
+            <div class="alert alert-warning" role="alert">"Escreva abaixo, no campo <b>"Observação"</b>,
+                uma mensagem informativa à mãe ou responsável sobre o status da matrícula: <b>deferida/indeferida</b>,
+                    e demais procedimentos para efetivar a matrícula definitiva"
+            </div>
+            <label for="obs"><b>Observação: </b></label>
+
+            <input type="text" name="obs"
+                   placeholder="Mensagem ao responsável"
+                   class="form-control"
+                   value="{{ request.form['obs'] or post['obs'] }}">
+            <p></p>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col">
+            <button type="submit" class="btn btn-primary">Alterar dados</button>
+        </div>
+    </div>
+</form>
+
+        <div class="row">
+            <div class="col">
+                <p></p>
+                <form action="{{ url_for('delete', id=post['id']) }}" method="post">
+                    <input type="submit" value="Apagar cadastro do aluno" class="btn btn-danger btn-md"
+                           onclick="return confirm('Tem certeza que deseja apagar esse registro?')">
+                </form>
+                <p></p>
+            </div>
+        </div>
+
+{% endblock %}

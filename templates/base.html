@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fil=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<title>{% block title %} {% endblock %}</title>
+</head>
+
+<body>
+
+<header>
+	<nav class="navbar navbar-expand-md navbar-light">
+		<div class="container-fluid">
+				<div class="col col-sm">
+					<a class="navbar-brand" href="{{ url_for('index') }}">
+						<img src="{{ url_for('static', filename='pmg.png') }}" style="float:left" alt="pmg_logo">
+					</a>
+				</div>
+				<div class="col col-7">
+					<span class="navbar-text text-dark">
+						<h4>Secretaria<br> de Educação</h4>
+					</span>
+				</div>
+				<div class="col col-sm">
+					<img src="{{ url_for('static', filename='gier.png') }}" alt="gier_logo.png" style="float:right; vertical-align:bottom">
+				</div>
+		</div>
+	</nav>
+</header>
+
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+	<div class="container-fluid">
+				<div class="col">
+					<button class="btn btn-sm btn-light" type="button">
+						<a href="{{ url_for('create') }}">
+							<img src="{{ url_for('static', filename='criancas.png') }}">
+							<span style="color:#0088ff">Educação Infantil</span>
+						</a>
+					</button>
+				</div>
+				<div class="col">
+					<button class="btn btn-sm btn-light" type="button">
+						<a href="{{ url_for('create') }}">
+							<img src="{{ url_for('static', filename='eja.png') }}">
+							<span style="color:#000099">Educação de Jovens e Adultos</span>
+						</a>
+					</button>
+				</div>
+				<div class="col">
+					<button class="btn btn-sm btn-light" type="button">
+						<a href="{{ url_for('create') }}">
+							<img src="{{ url_for('static', filename='criancas.png') }}">
+							<span style="color:#0088ff">Ensino Fundamental</span>
+						</a>
+					</button>
+				</div>
+				<div class="col">
+					<button class="btn btn-sm btn-light" type="button">
+						<a href="{{ url_for('static', filename='escolas.pdf') }}">
+							<img src="{{ url_for('static', filename='lupa.png') }}">
+							<span style="color:#FFA700">Consultar Escola</span>
+						</a>
+					</button>
+				</div>
+				<div class="col">
+					<button class="btn btn-sm btn-light" type="button">
+						<a href="{{ url_for('consulta') }}">
+							<img src="{{ url_for('static', filename='pagina.png') }}">
+							<span style="color:#E73843">Consultar Solicitação</span>
+						</a>
+					</button>
+				</div>
+				<div class="col col-sm">
+					<button class="btn btn-sm btn-light" type="button">
+						<a href="{{ url_for('lista') }}">
+							<img src="{{ url_for('static', filename='espera.png') }}" width="30">
+							<span style="color:#777777">Lista de Espera</span>
+						</a>
+					</button>
+				</div>
+  	</div>
+</nav>
+
+<div class="container border">
+	{% block content %} {% endblock %}
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
