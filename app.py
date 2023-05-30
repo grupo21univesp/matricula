@@ -62,7 +62,9 @@ def create():
             post = Matricula(name=name, born=born, grad=grad, sch=sch, addr=addr, city=city, uf=uf, resp=resp, email=email, tel=tel)
             db.session.add(post)
             db.session.commit()
-            return redirect(url_for('protocolo'))
+            id = post.id
+            name = post.name
+            return render_template('protocolo.html', name=name, id=id)
 
     return render_template('create.html')
 
@@ -118,7 +120,8 @@ def delete(id):
 @app.route('/protocolo', methods=('GET', 'POST'))
 def protocolo():
     name = request.args.get('name')
-    return render_template('protocolo.html', name=name)
+    id = request.args.get('id')
+    return render_template('protocolo.html', name=name, id=id)
 
 @app.route('/consulta', methods=('GET', 'POST'))
 def consulta():
