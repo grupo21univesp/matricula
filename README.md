@@ -5,7 +5,7 @@ planejamento dos cursos da grade do ensino fundamental e EJA no município de Gu
 
 Requisitos para rodar a aplicação com Framework Flask e Banco de Dados SqLite :
 
-1- instalar o Python no seu computador;
+1- instalar o Python no seu computador - não esquecer de marcar o box "Add Python to Path" na instalação (para poder digitar comandos no terminal do Windows);
 
 2- instalar o Pycharm;
 
