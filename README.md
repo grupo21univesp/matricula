@@ -42,9 +42,9 @@ comando -> pip3 install sqlalchemy
 (instala o flask-sqlalchemy para manipular objetos no banco de dados)
 comando -> pip3 install flask-sqlalchemy
 
-9- extraia os arquivos zipados que encontram-se na arquivo "matricula.zip" para dentro da pasta repositório "matricula" criada acima no item "4";
+9- copie os arquivos da brand "/matricula" para dentro da pasta repositório "/matricula" criada no seu computador - feito acima no item "4";
  
-10- abre o repositório "matricula" na IDE PyCharm;
+10- abre o repositório "/matricula" na IDE PyCharm;
 
 11- no terminal, exporte as variáveis de ambiente;
 comando -> set FLASK_APP=app
