@@ -3,14 +3,19 @@
 {% block content %}
 
 <p></p>
-<h4><b>{% block title %} Protocolo de pré-matrícula: {% endblock %}</b></h4>
+<h4><b><span style="color:#0088ff">{% block title %} Protocolo de pré-matrícula: {% endblock %}</span></b></h4>
 
 <p></p>
 
-<div class="alert alert-secondary" role="alert"><h5>Sua pré-matrícula foi cadastrada com sucesso!</h5></div>
-
-<p>Aguarde o contato da Escola ou se preferir acompanhe pelo link acima
-    <span style="color:#E73843">"Consultar Solicitação"</span>
-</p>
+<div class="alert alert-primary" role="alert">
+    <h5><span style="color:#000000">
+        {{ name }},</span>
+    sua pré-matrícula foi cadastrada com sucesso!</h5>
+    <h5>Número do protocolo: <b>"{{ id }}"</b></h5>
+</div>
+<div class="alert alert-warning" role="alert">
+    <p><b>ATENÇÃO:</b> guarde este protocolo <b><i>"{{ id }}"</i></b> para consultar o seu pedido de matrícula, acompanhe pelo link acima
+    <span style="color:#E73843">"Consultar Solicitação"</span></p>
+</div>
 
 {% endblock %}
